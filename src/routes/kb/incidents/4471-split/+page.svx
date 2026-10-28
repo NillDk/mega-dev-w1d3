@@ -17,11 +17,12 @@ signature: v1.eyJzdWIiOiI4MTciLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdC
 [#4471](/kb/incidents/4471) says one issue, one fix queued. Its reports say otherwise. #4471 was
 merged on subject line ([decision 0001](/kb/decisions/0001-dedupe-by-subject)), and a subject line
 like "Wrong date again" fits every date bug we have. Sorted by tenant and channel, and read, the
-reports are three problems. Each one now has a ticket of its own.
+reports are three problems. Each one got a ticket of its own. Engineering closed #4471 on
+5 October with two of them handled. The third is still open.
 
 <Callout kind="warn">
-The queued parser fix closes <code>parser</code> only. <code>hint</code> and <code>shift</code> stay
-open after it ships.
+<code>parser</code>: fixed (<code>fix(dates): parse dd/mm for eu locales</code>). <code>hint</code>: won't
+fix, booking-v3's form is retired. <code>shift</code>: <strong>still open</strong>. Neither change touches it.
 </Callout>
 
 ## The problems
@@ -29,20 +30,22 @@ open after it ships.
 <SplitTable ticket={4471} repo="NillDk/mega-dev-w1d3" issues={{ parser: 1, hint: 2, shift: 3 }} />
 
 - **`parser`**: the shared parser reads every date month first. A day-first tenant's date comes
-  out with day and month swapped: "4 March turned into 3 April". Fixed by the queued parser change.
+  out with day and month swapped: "4 March turned into 3 April". **Fixed**: `fix(dates): parse dd/mm for eu locales`.
 - **`hint`**: booking-v3's form prints `MM/DD/YYYY` under its date field. People type what the
-  hint says, month first, and the form reads it day first. Same symptom, different code: the fix
-  is the hint (or the form's reading), not the parser.
+  hint says, month first, and the form reads it day first. Same symptom, different code.
+  **Won't fix**: booking-v3's form is retired.
 - **`shift`**: the date moves by one day, not by a swap. "Client in Lisbon got Tuesday. Client in
   Toronto got Monday." A swap cannot do that; this looks like a time zone conversion. The desk
-  already listed these reports in `desk-notes.json` as a one-day move.
+  already listed these reports in `desk-notes.json` as a one-day move; they are filed under
+  `parser` by tenant and counted there too. **Still open**: the parser fix does not change them.
 
 ## How the reports were counted
 
 - One id, one report: the export pages overlap, so repeated rows count once (`uniqueById`).
 - Cause by tenant and channel (`causes.ts`), not by intake's tag. Intake guesses from the
   reporter's browser, and the guess disagrees with the tenant often (compare "tagged as" below).
-- A report the desk read as a one-day move is `shift`, whatever its tenant.
+- Counted where the desk files them, as CauseTable does. A report the desk read as a one-day move
+  is also counted under `shift`.
 
 ## As #4471 files them today
 

@@ -16,7 +16,7 @@
 <p class="sum">
   <strong>{rows.length}</strong> reports in #{ticket} ({exported} rows in the export; overlapping pages repeat
   {exported - rows.length}) · <strong>{groups.length}</strong>
-  {groups.length === 1 ? 'problem' : 'problems'}
+  {groups.length === 1 ? 'problem' : 'problems'}, counted where the desk files them
 </p>
 
 <table>
@@ -27,7 +27,7 @@
     {#each groups as g (g.problem)}
       <tr>
         <td><code>{g.problem}</code></td>
-        <td>{g.reports.length}</td>
+        <td>{g.reports.length}{#if g.filedUnder.length}<span class="also"> · also in {g.filedUnder.join(', ')}</span>{/if}</td>
         <td>{g.tenants}</td>
         <td>{g.firstSeen} → {g.lastSeen}</td>
         <td>
@@ -45,4 +45,5 @@
 <style>
   .sum { font-size: 1.1rem; }
   .none { color: var(--warn); font-weight: 600; }
+  .also { color: var(--muted); font-size: 0.85em; }
 </style>
