@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../_app/immutable/entry/start.D45SxwyC.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.DE2DCllr.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Dc3myhCH.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/xtPUTRJa.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/nlwu1iZM.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/B_F0-bQf.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.m47xZqRO.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.CVo913Ee.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Cdr0LWUj.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DiXWMdRu.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/B7kOgPL8.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/WDuJd7c_.js" rel="modulepreload">
 		<link href="../../_app/immutable/nodes/0.Cjwt2hR7.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DtwsQ6ur.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/5.4-PE0iUp.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/Don1amf5.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/5.Bj4hrX9O.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BKRTNOGv.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Dv-jlncp.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BgJH9bYc.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/4Yqb2TDZ.js" rel="modulepreload">
@@ -37,19 +37,19 @@ hint says, month first, and the form reads it day first. Same symptom, different
 is the hint (or the form’s reading), not the parser.</li> <li><strong><code>shift</code></strong>: the date moves by one day, not by a swap. “Client in Lisbon got Tuesday. Client in
 Toronto got Monday.” A swap cannot do that; this looks like a time zone conversion. The desk
 already listed these reports in <code>desk-notes.json</code> as a one-day move.</li></ul> <h2>How the reports were counted</h2> <ul><li>One id, one report: the export pages overlap, so repeated rows count once (<code>uniqueById</code>).</li> <li>Cause by tenant and channel (<code>causes.ts</code>), not by intake’s tag. Intake guesses from the
-reporter’s browser, and the guess disagrees with the tenant often (compare “tagged as” below).</li> <li>A report the desk read as a one-day move is <code>shift</code>, whatever its tenant.</li></ul> <h2>As #4471 files them today</h2> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <h2>Lessons</h2> <ul><li>A subject line names the symptom, not the bug. Read the body before you merge.</li> <li>Count from the data, not from the tag intake guessed.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-H7CF-D1D9</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+reporter’s browser, and the guess disagrees with the tenant often (compare “tagged as” below).</li> <li>A report the desk read as a one-day move is <code>shift</code>, whatever its tenant.</li></ul> <h2>As #4471 files them today</h2> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <h2>Lessons</h2> <ul><li>A subject line names the symptom, not the bug. Read the body before you merge.</li> <li>Count from the data, not from the tag intake guessed.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-QG4V-1N08</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1m042nm = {
+					__sveltekit_1ctemrj = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.D45SxwyC.js"),
-						import("../../_app/immutable/entry/app.m47xZqRO.js")
+						import("../../_app/immutable/entry/start.DE2DCllr.js"),
+						import("../../_app/immutable/entry/app.CVo913Ee.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
